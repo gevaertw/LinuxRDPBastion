@@ -1,3 +1,6 @@
+# Overview
+<img src="./Arch.svg">
+ 
 # Prerequisites on laptop 
 - Assuming you work from a Linux or Mac pc (bash behaves funky on Windows / WSL)
 - bash
