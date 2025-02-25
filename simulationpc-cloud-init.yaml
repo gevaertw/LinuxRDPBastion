@@ -10,6 +10,7 @@ runcmd:
   - touch /tmp/cloud-init-started.txt
   - # apt update -y
   - # apt-get update
+  - # Install NVIDEA drivers
   - # GUI
   - DEBIAN_FRONTEND=noninteractive apt-get -y install xfce4
   - apt install xfce4-session

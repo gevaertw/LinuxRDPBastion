@@ -1,5 +1,5 @@
-# Set the VM name & type
-VMNAME="UGR-WKS03"
+# Set the VM name & type & autoshutdown flag
+VMNAME="UGR-WKS09"
 VMTYPE="Standard_D4s_v5"
 ENABLE_AUTOSHUTDOWN="true" #Set to "true" to enable auto-shutdown, "false" otherwise
 
@@ -28,6 +28,9 @@ VNETADRES_PREFIX=$(jq -r '.parameters.vnetAddressPrefixes.value' "$PARAMETERS_FI
 VMSUBNET_NAME=$(jq -r '.parameters.vmSubnetName.value' "$PARAMETERS_FILE")
 VMSUBNET_PREFIX=$(jq -r '.parameters.vmSubnetPrefix.value' "$PARAMETERS_FILE")
 AUTOSHUTDOWN_TIME=$(jq -r '.parameters.autoshutdownTime.value' "$PARAMETERS_FILE")
+ENABLE_SPOTVM=$(jq -r '.parameters.enableSpotVM.value' "$PARAMETERS_FILE")
+
+# echo ENABLE_SPOTVM: $ENABLE_SPOTVM
 
 # Other variables
 VMSUBNETNSG_NAME="$VMSUBNET_NAME-nsg"
@@ -47,6 +50,7 @@ az deployment group create \
         subnetId=$VMSUBNET_ID \
         vmType=$VMTYPE \
         enableAutoShutdown=$ENABLE_AUTOSHUTDOWN \
+        enableSpotVM=$ENABLE_SPOTVM \
         adminUsername=$ADMIN_USERNAME \
         adminPassword=$ADMIN_PASSWORD \
         customData=$CUSTOMDATA

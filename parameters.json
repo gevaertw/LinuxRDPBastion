@@ -35,6 +35,9 @@
         "vmSubnetPrefix": {
             "value": "['10.16.1.0/24']"
         },
+        "enableSpotVM": {
+            "value": "Regular"
+        },
         "autoshutdownTime": {
             "value": "1900"
         },

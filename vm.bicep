@@ -7,6 +7,7 @@ param adminUsername string = 'adminUser'
 param adminPassword string
 param customData string
 param enableAutoShutdown bool = false
+param enableSpotVM bool = false
 
 
 resource networkInterface_R 'Microsoft.Network/networkInterfaces@2021-02-01' = {
