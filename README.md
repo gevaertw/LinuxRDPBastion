@@ -22,9 +22,9 @@ deployVM.sh
 
 There are 3 parmeters to set in the script
 ```bash
-VMNAME="UGR-WKS00"                      # choose a VM Name 
-VMTYPE="Standard_D4s_v5"                # choose a type
-ENABLE_AUTOSHUTDOWN="true"              # set true if you want the VM to automaticaly shut down (shutdown time is the parameters.json)
+VMNAME="UGR-WKS00"                      # Choose a VM Name 
+VMTYPE="Standard_D4s_v5"                # Choose a type
+ENABLE_AUTOSHUTDOWN="true"              # Set true if you want the VM to automaticaly shut down (shutdown time is the parameters.json)
 ```
 - Other, more advanced parameters (including username and password) are in the parameters.json  file
 - Add auto installation scripts to the simulationpc-cloud-init.yaml file.

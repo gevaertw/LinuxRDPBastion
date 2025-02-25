@@ -1,7 +1,7 @@
 # Set the VM name & type & autoshutdown flag
-VMNAME="UGR-WKS09"
-VMTYPE="Standard_D4s_v5"
-ENABLE_AUTOSHUTDOWN="true" #Set to "true" to enable auto-shutdown, "false" otherwise
+VMNAME="UGR-WKS00"                      # Choose a VM Name 
+VMTYPE="Standard_D4s_v5"                # Choose a type
+ENABLE_AUTOSHUTDOWN="true"              # Set true if you want the VM to automaticaly shut down (shutdown time is the parameters.json)
 
 # select another coudinit file
 VMCLOUDINIT_FILE="simulationpc-cloud-init.yaml"
