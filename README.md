@@ -1,12 +1,11 @@
-# 
-Prerequisites on laptop 
-- Assuming you work from a Linux or Mac pc (bash behaves funky on Windows)
+# Prerequisites on laptop 
+- Assuming you work from a Linux or Mac pc (bash behaves funky on Windows / WSL)
 - bash
 - az cli
 - jq
 
 # Install base
-- You need to do this only once.  contains bastion, wich could be a pricy component.  You can delete it and redeploy to save some EUR
+- You need to do this only once.  Contains bastion, wich could be a pricy component.  You can delete it and redeploy to save some EUR
 - Execute the script:
 ```bash
 deployNetwork.sh
@@ -14,7 +13,7 @@ deployNetwork.sh
 
 
 # Install a VM
-- You can insatll as many VM's as you like.  
+- You can insatll as many VM's as you like by selecting a new name.  
 - Execute the script:
 ```bash
 deployVM.sh
@@ -28,6 +27,7 @@ ENABLE_AUTOSHUTDOWN="true"              # Set true if you want the VM to automat
 ```
 - Other, more advanced parameters (including username and password) are in the parameters.json  file
 - Add auto installation scripts to the simulationpc-cloud-init.yaml file.
+- Once the VM is installed the cloud-init file does not get reapplied.
 
 # Reference
 - base concept of connecting to a VM

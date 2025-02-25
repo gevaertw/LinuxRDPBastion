@@ -1,5 +1,7 @@
+#!/bin/bash
+
 # Set the VM name & type & autoshutdown flag
-VMNAME="UGR-WKS00"                      # Choose a VM Name 
+VMNAME="UGR-WKS10"                      # Choose a VM Name 
 VMTYPE="Standard_D4s_v5"                # Choose a type
 ENABLE_AUTOSHUTDOWN="true"              # Set true if you want the VM to automaticaly shut down (shutdown time is the parameters.json)
 
