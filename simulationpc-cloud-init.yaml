@@ -1,0 +1,50 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - jq
+  - python3
+  - python3-pip
+  - nano
+runcmd:
+  - touch /tmp/cloud-init-started.txt
+  - # apt update -y
+  - # apt-get update
+  - # GUI
+  - DEBIAN_FRONTEND=noninteractive apt-get -y install xfce4
+  - apt install xfce4-session
+  - apt-get -y install xrdp
+  - systemctl enable xrdp
+  - echo xfce4-session >/home/vmadmin/.xsession
+  - systemctl restart xrdp
+  - # Docker
+  - apt install -y apt-transport-https ca-certificates curl software-properties-common
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
+  - add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - apt install -y docker-ce
+  - systemctl enable docker
+  - systemctl start docker
+  - # Unity
+  - wget -qO - https://hub.unity3d.com/linux/keys/public | gpg --dearmor | sudo tee /usr/share/keyrings/Unity_Technologies_ApS.gpg > /dev/null
+  - sh -c 'echo "deb [signed-by=/usr/share/keyrings/Unity_Technologies_ApS.gpg] https://hub.unity3d.com/linux/repos/deb stable main" > /etc/apt/sources.list.d/unityhub.list'
+  - apt update -y
+  - apt-get install unityhub -y
+  - # blender
+  - apt install -y software-properties-common
+  - add-apt-repository -y ppa:thomas-schiex/blender
+  - apt update -y
+  - apt install -y blender
+  - # vsCode
+  - # apt install -y software-properties-common apt-transport-https wget
+  - # wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
+  - # add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  - # apt update -y
+  - # apt install -y code
+
+
+
+
+
+
+
+

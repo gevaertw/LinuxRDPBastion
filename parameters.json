@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tenantID": {
+            "value": "ee71114b-376c-43bf-9bc0-2964970c169c"
+        },
+        "subscriptionID": {
+            "value": "d8c72049-9d9e-4aad-b01c-0b161e191ad1"
+        },
+        "location": {
+            "value": "swedencentral"
+        },
+        "adminUsername": {
+            "value": "vmadmin"
+        },
+        "adminPassword": {
+            "value": "CHANGE-THIS-ASAP!-vghv9khgv-kghcFDD3FuiuKUG--mgfdsrssr"
+        },
+        "networkRGName": {
+            "value": "UGR-net-rg"
+        },
+        "VMRGName": {
+            "value": "UGR-VM-rg"
+        },
+        "vnetName": {
+            "value": "UGR-vNet"
+        },
+        "vnetAddressPrefixes": {
+            "value": "['10.16.0.0/16']"
+        },
+        "vmSubnetName": {
+            "value": "UGR-vNet-vm-sn"
+        },
+        "vmSubnetPrefix": {
+            "value": "['10.16.1.0/24']"
+        },
+        "autoshutdownTime": {
+            "value": "1900"
+        },
+        "bastionHostName": {
+            "value": "UGR-bas"
+        },
+        "bastionSubnetName": {
+            "value": "AzureBastionSubnet"
+        },
+        "bastionSubnetPrefix": {
+            "value": "['10.16.0.0/24']"
+        }
+    }
+}
